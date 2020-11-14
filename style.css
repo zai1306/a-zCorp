@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.logo {
+  padding: 10px 20px;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform-origin: left;
+  transition: 0.3s;
+  transform: scale(1);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.logo .burger span {
+  height: 5px;
+  margin: 3px 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logo .burger span:nth-child(1) {
+  width: 30px;
+  border: 2px solid crimson;
+  background: crimson;
+}
+
+.logo .burger span:nth-child(2) {
+  width: 40px;
+  border: 2px solid pink;
+  background: pink;
+}
+
+.logo .burger span:nth-child(3) {
+  width: 25px;
+  border: 2px solid plum;
+  background: plum;
+}
+header .logo a {
+  text-decoration: none;
+  color: #f5c8d6;
+  font-family: "Goldman", sans-serif;
+}
+
+header nav {
+  padding: 20px 0;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  transition: 0.6s;
+  transform-origin: right;
+  transform: scale(0);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  background-image: linear-gradient(45deg, crimson, plum);
+}
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex: 0.55;
+}
+header nav .cross {
+  flex: 0.45;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+header nav .cross i {
+  width: 50px;
+  font-size: 45px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.6s;
+  transform-origin: left;
+}
+header nav .cross i:hover {
+  color: pink;
+}
+header nav.active {
+  transform-origin: right;
+  transform: scale(1);
+}
+
+header .logo.active {
+  transform: scale(0);
+  transform-origin: right;
+}
+header ul li {
+  list-style: none;
+  text-align: center;
+  display: block;
+}
+header ul li:last-child a {
+  border-bottom: 0px;
+}
+header ul li a {
+  text-decoration: none;
+  padding: 0 50px;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+header ul li a .icon {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto 10px;
+}
+
+header ul li a .icon .fas,
+header ul li a .icon .far {
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  font-size: 34px;
+  transition: 0.5s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+header ul li a:hover .icon .fas,
+header ul li a:hover .icon .far,
+header ul li a:focus .icon .far,
+header ul li a:focus .icon .fas {
+  transform: translateY(-100%);
+}
+
+header ul li a .icon .fas:last-child,
+header ul li a .icon .far:last-child {
+  color: pink;
+}
+
+header ul li a .name {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+header ul li a .name span {
+  display: block;
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 20px;
+  transition: 0.5s;
+}
+
+header ul li a .name span:before {
+  content: attr(data-text);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: pink;
+}
+header ul li a:hover .name span,
+header ul li a:focus .name span {
+  transform: translateY(20px);
+}
+
+#banner {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(45deg, crimson, plum);
+  display: flex;
+  justify-content: flex-end;
+  padding: 35px 0px;
+  align-items: flex-start;
+  flex-direction: column;
+  transition: 0.5s ease;
+  transform-origin: right;
+  transform: scale(1);
+}
+
+#banner.active {
+  transform-origin: left;
+  transform: scale(0);
+}
+
+#banner::before {
+  content: "";
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  top: 0;
+  background: url(startup.jpg) #fff;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  background-size: 30%;
+  clip-path: polygon(15% 0, 100% 0%, 100% 100%, 87% 100%);
+}
+
+#banner h1 {
+  font-size: 60px;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 35px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-family: "Big Shoulders Stencil Text", cursive;
+  border-bottom: 2px solid;
+}
+
+#banner h3 {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 35px;
+  margin-top: 15 px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid;
+}
+
+#banner a {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 35px;
+  margin-top: 45px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  border-bottom: 2px inset;
+  height: 48px;
+}
+
+#banner a:hover {
+  letter-spacing: 3px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 0px;
+}
+
+#about {
+  height: 100vh;
+  background-image: linear-gradient(180deg, crimson, plum);
+}
+
+.about {
+  height: 100%;
+  background-color: #fff;
+  color: #555;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  padding: 50px 0px !important;
+  background-image: linear-gradient(45deg, crimson, plum);
+}
+
+.about .heading {
+  position: absolute;
+  padding: 30px;
+  width: 50%;
+  left: 10%;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 1;
+}
+.about .head {
+  text-align: left;
+  font-size: 45px;
+  border-bottom: 2px solid;
+  text-transform: capitalize;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.about .heading .text {
+  margin-top: 40px;
+  width: 100%;
+}
+.about .heading .text p {
+  font-size: 17px;
+}
+.about .heading .text .texter {
+  color: red;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.about .heading .text .pink {
+  color: pink;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.about .heading .text .plum {
+  color: plum;
+  font-size: 19px;
+  font-weight: 400;
+}
+.about .quest {
+  width: 45%;
+}
